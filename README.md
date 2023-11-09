@@ -1,3 +1,3 @@
-# Bubble Sort Code
+# Rust Practice Code
 
 
