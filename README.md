@@ -1,3 +1,3 @@
-# LG-1
+# Bubble Sort Code
 demo
 hello world
