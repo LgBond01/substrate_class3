@@ -1,1 +1,22 @@
+fn main() {
+    let nums = vec![5, 2, 1, 3, 6, 4];
+    let sorted_nums = bubble_sort(nums);
+    println!("{:?}", sorted_nums);
+
+    let items = vec!['a', 'c', 'b'];
+    let sorted_items = bubble_sort(items);
+    println!("{:?}", sorted_items);
+}
+
+fn bubble_sort<T: PartialOrd>(mut items: Vec<T>) -> Vec<T> {
+    let len = items.len();
+    for i in 0..len {
+        for j in 0..(len - 1 - i) {
+            if items[j] > items[j + 1] {
+                items.swap(j, j + 1);
+            }
+        }
+    }
+    items
+}
 
