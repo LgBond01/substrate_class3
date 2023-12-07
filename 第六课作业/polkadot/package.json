@@ -1,0 +1,23 @@
+{
+    "name": "polkadot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@builder.io/qwik": "^1.2.19",
+        "@polkadot/api": "^10.0.0",
+        "@polkadot/types": "^10.0.0",
+        "@qwikdev/astro": "^0.2.5",
+        "astro": "^3.6.3",
+        "web3": "^4.2.2"
+    }
+}
