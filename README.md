@@ -31,5 +31,5 @@
 [代码](第六课作业/polkadot/src/index.astro)
 
 ### 运行截图
-<img src="第五课作业/img/运行截图.png" alt="运行截图" width="640" height="300">
+<img src="第六课作业/img/代码截图.png" alt="运行截图" width="640" height="300">
 
