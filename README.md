@@ -14,7 +14,7 @@
 [poe代码](/第五课作业/poe/src/lib.rs)
 
 ### 运行截图
-<img src="第五课作业/img/运行截图.png" alt="运行截图" width="640" height="200">
+<img src="第五课作业/img/运行截图.png" alt="运行截图" width="640" height="400">
 
 ### poe功能截图
 
