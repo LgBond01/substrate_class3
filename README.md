@@ -24,4 +24,4 @@
 <img src="第五课作业/img/事件.jpg" alt="事件" width="640" height="300">
 
 ### trans_claim代码截图
-<img src="第五课作业/img/代码截图.png" alt="trans_claim" width="640" height="300">
+<img src="第五课作业/img/代码截图.png" alt="trans_claim" width="640" height="640">
