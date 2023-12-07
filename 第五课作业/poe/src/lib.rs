@@ -97,33 +97,31 @@ pub mod pallet {
 			Ok(())
 		}
 
-		// 使用 `pallet` 属性定义 extrinsic 的权重。
-        // 权重是 extrinsic 消耗的计算资源的度量。
-        // `{0}` 是权重的占位符，在编译时将被替换。
-        #[pallet::weight({0})]
-        #[pallet::call_index(3)]
-        // 定义公共函数 `trans_claim`，包括参数 `origin`、`claim` 和 `recipient`。
-        pub fn trans_claim(
-            origin: OriginFor<T>,   // 原始调用的来源，表示签名账户等。
-            claim: T::Hash,         // 要转移的声明的唯一标识符（哈希）。
-            recipient: T::AccountId // 转移声明的目标接收者的账户 ID。
-        	) -> DispatchResult {
-            // 确保调用者是有效账户并返回签名信息。
-            let sender = ensure_signed(origin)?;
-            // 通过声明哈希检索与之相关的所有者和其他信息。
-            // 如果声明不存在，则返回错误。
-            let (owner, _) = Claims::<T>::get(&claim).ok_or(Error::<T>::NoSuchClaim)?;
-            // 确保调用者是声明的所有者；否则，返回错误。
-            ensure!(sender == owner, Error::<T>::NotClaimOwner);
-            // 使用 frame_system 模块获取当前区块号。
-            let current_block = <frame_system::Pallet<T>>::block_number();
-            // 更新声明信息，将其所有权转移给目标接收者，并记录当前区块号。
-            Claims::<T>::insert(&claim, (&recipient, current_block));
-            // 发送声明转移事件，包括发起者、声明和目标接收者信息。
-            Self::deposit_event(Event::ClaimTransed { who: sender, claim, to: recipient });
-            // 返回成功。
-            Ok(())
-        }
+		
+                #[pallet::weight({0})]
+                #[pallet::call_index(3)]
+                // 定义公共函数 `trans_claim`，包括参数 `origin`、`claim` 和 `recipient`。
+                pub fn trans_claim(
+                        origin: OriginFor<T>,   // 原始调用的来源，表示签名账户等。
+                        claim: T::Hash,         // 要转移的声明的唯一标识符（哈希）。
+                        recipient: T::AccountId // 转移声明的目标接收者的账户 ID。
+        	        ) -> DispatchResult {
+                        // 确保调用者是有效账户并返回签名信息。
+                        let sender = ensure_signed(origin)?;
+                        // 通过声明哈希检索与之相关的所有者和其他信息。
+                        // 如果声明不存在，则返回错误。
+                        let (owner, _) = Claims::<T>::get(&claim).ok_or(Error::<T>::NoSuchClaim)?;
+                        // 确保调用者是声明的所有者；否则，返回错误。
+                        ensure!(sender == owner, Error::<T>::NotClaimOwner);
+                        // 使用 frame_system 模块获取当前区块号。
+                        let current_block = <frame_system::Pallet<T>>::block_number();
+                        // 更新声明信息，将其所有权转移给目标接收者，并记录当前区块号。
+                        Claims::<T>::insert(&claim, (&recipient, current_block));
+                        // 发送声明转移事件，包括发起者、声明和目标接收者信息。
+                        Self::deposit_event(Event::ClaimTransed { who: sender, claim, to: recipient });
+                        // 返回成功。
+                        Ok(())
+                }
 
 	}
 }
