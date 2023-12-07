@@ -26,8 +26,8 @@
 ### trans_claim代码截图
 <img src="第五课作业/img/代码截图.png" alt="trans_claim" width="640" height="400">
 
-## Substrate 课程代码_第五课
-## Poe功能代码
+## Substrate 课程代码_第六课
+## polkadotjs功能代码
 [代码](第六课作业/polkadot/src/index.astro)
 
 ### 运行截图
