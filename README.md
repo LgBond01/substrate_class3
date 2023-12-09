@@ -28,7 +28,7 @@
 
 ## Substrate 课程代码_第六课
 ## polkadotjs功能代码
-[代码](第六课作业/polkadot/src/index.astro)
+[代码](第六课作业/index.ts)
 
 ### 运行截图
 <img src="第六课作业/img/SharedScreenshot.jpg" alt="运行截图" width="640" height="300">
